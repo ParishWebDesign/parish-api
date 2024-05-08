@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "lib": ["esnext", "ES6"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "noImplicitAny": true
+  },
+  "exclude": ["node_modules"],
+  "include": ["**/*.mts", "netlify/functions/util/null.util.ts", "netlify/functions/util/rss.util.ts", "netlify/functions/util/string.util.ts"]
+}

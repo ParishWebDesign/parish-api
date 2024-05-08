@@ -1,0 +1,23 @@
+{
+  "name": "catholic-church-services-api",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CatholicChurchServices/api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CatholicChurchServices/api/issues"
+  },
+  "homepage": "https://github.com/CatholicChurchServices/api#readme",
+  "dependencies": {
+    "@netlify/functions": "2.6.0",
+    "date-fns": "3.6.0",
+    "dotenv": "16.4.5",
+    "fast-xml-parser": "4.3.6",
+    "node-fetch": "3.3.2"
+  }
+}

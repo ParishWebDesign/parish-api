@@ -1,7 +1,7 @@
-import { getMongoClient } from "../util/mongo.util";
-import { isNullish } from "../util/null.util";
-import { createErrorResponse, createResponse } from "../util/response.util";
-import { isEmpty } from "../util/string.util";
+import { getMongoClient } from "./util/mongo.util";
+import { isNullish } from "./util/null.util";
+import { createErrorResponse, createResponse } from "./util/response.util";
+import { isEmpty } from "./util/string.util";
 
 import type { Handler } from "@netlify/functions";
 import type { MongoClient } from "mongodb";

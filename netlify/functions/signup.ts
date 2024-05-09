@@ -28,12 +28,17 @@ export const handler: Handler = async (event) => {
     return createErrorResponse(400, "Bad input");
   }
 
+  console.log("Body validated!");
+
   let client: MongoClient | undefined;
 
   try {
     const client = await getMongoClient();
+    console.log("Connected to mongo db!");
     const database = client.db(process.env.MONGO_DATABASE_DATABASE);
+    console.log(`Connected to mongo database: ${process.env.MONGO_DATABASE_DATABASE}!`);
     const requests = database.collection("requests");
+    console.log(`Connected to mongo collection: requests!`);
 
     const doc = {
       name: `${body.name}`,
@@ -41,8 +46,10 @@ export const handler: Handler = async (event) => {
     };
 
     await requests.insertOne(doc);
+    console.log("Document inserted", doc);
 
     await client?.close();
+    console.log("Mongo client closed");
     return createResponse(200, { message: "Contact request saved" });
   } catch (e) {
     console.log("Error creating database document", e, event);

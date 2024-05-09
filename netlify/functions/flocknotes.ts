@@ -1,11 +1,10 @@
-import fetch from "node-fetch";
+import { parse } from "date-fns";
 
+import { createErrorResponse, createResponse } from "./util/response.util";
 import { getFeed } from "./util/rss.util";
-import { createResponse } from "./util/response.util";
+import { isNotEmpty } from "./util/string.util";
 
 import type { Handler } from "@netlify/functions";
-import { isNotEmpty } from "./util/string.util";
-import { parse } from "date-fns";
 
 const FLOCK_NOTE_RSS_URL = "https://rss.flocknote.com/";
 
@@ -61,7 +60,7 @@ export const handler: Handler = async (event) => {
   const account = event.path.replace("/.netlify/functions/flocknotes/", "");
 
   if (!/^[0-9]+$/.test(account)) {
-    return createResponse(400, { message: "Invalid account" });
+    return createErrorResponse(400, "Invalid account");
   }
 
   return createResponse(200, { notes: await getFlockNotes(account) });

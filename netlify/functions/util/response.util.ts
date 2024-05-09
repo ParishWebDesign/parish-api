@@ -10,3 +10,7 @@ export function createResponse<T extends object>(status: number, body: T): Handl
     },
   };
 }
+
+export function createErrorResponse(status: number, message: string): HandlerResponse {
+  return createResponse(status, { message });
+}

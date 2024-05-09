@@ -15,9 +15,14 @@
   "homepage": "https://github.com/CatholicChurchServices/api#readme",
   "dependencies": {
     "@netlify/functions": "2.6.0",
+    "@types/node": "18.19.33",
     "date-fns": "3.6.0",
     "dotenv": "16.4.5",
     "fast-xml-parser": "4.3.6",
+    "mongodb": "6.6.1",
     "node-fetch": "3.3.2"
+  },
+  "engines": {
+    "node": ">=18.18 <19"
   }
 }
